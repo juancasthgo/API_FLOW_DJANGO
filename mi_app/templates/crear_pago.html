@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crear Pago</title>
+</head>
+<body>
+    <div class="container" style="text-align: center;">
+        <div class="row body">
+            <h1>Pago Flow</h1>
+        </div>
+        <div class="row body" style="text-align: center;">
+            <form method="POST" class="formulario" style="max-width: 800px; margin: 0 auto;">
+            {% csrf_token %}
+            <ul style="list-style: none; padding: 0;">
+            <li style="margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label for="commerceOrder" style="margin-bottom: 10px; font-size: 1.2em;">Titulo:</label>
+                <input type="text" id="commerceOrder" name="commerceOrder" required style="text-align: center; width: 100%; padding: 10px; font-size: 1.2em;">
+            </div>
+            </li>
+            <li style="margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label for="subject" style="margin-bottom: 10px; font-size: 1.2em;">Descripción:</label>
+                <input list="subjects" id="subject" name="subject" required style="text-align: center; width: 100%; padding: 10px; font-size: 1.2em;">
+                <datalist id="subjects">
+                    <option value="">
+                    <option value="">
+                    <option value="">
+                    <option value="">                   
+                </datalist>
+            </div>
+            </li>
+            <li style="margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label for="currency" style="margin-bottom: 10px; font-size: 1.2em;">Tipo de Moneda:</label>
+                <select id="currency" name="currency" required style="text-align: center; width: 100%; padding: 10px; font-size: 1.2em;">
+                <option value="CLP">CLP</option>
+                <option value="MXN">MXN</option>
+                <option value="PN">PEN</option>
+                <option value="UF">UF</option>
+                <option value="USD">USD</option>
+                </select>
+            </div>
+            </li>
+            <li style="margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label for="amount" style="margin-bottom: 10px; font-size: 1.2em;">Monto (Minimo $350 CLP):</label>
+                <input type="number" id="amount" name="amount" required style="text-align: center; width: 100%; padding: 10px; font-size: 1.2em;">
+            </div>
+            </li>
+            <li style="margin-bottom: 20px;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <label for="email" style="margin-bottom: 10px; font-size: 1.2em;">Email del vendedor:</label>
+                <input list="emails" id="email" name="email" required style="text-align: center; width: 100%; padding: 10px; font-size: 1.2em; color: black;">
+                <datalist id="emails">
+                    <option value="">
+                    <option value="">
+                    <option value="">
+                    <option value="">
+                </datalist>
+            </div>
+            </li>
+            <li>
+            <input class="btn btn-submit" type="submit" value="Crear Pago" style="padding: 15px 30px; font-size: 1.2em;">
+            </li>
+            </ul>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
