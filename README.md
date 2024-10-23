@@ -125,3 +125,4 @@ def payment_confirmation(request):
         else:
             return render(request, 'error.html', {'error': response.text})
 ```
+Detalles de la configuracion en la raiz de la carpeta.
