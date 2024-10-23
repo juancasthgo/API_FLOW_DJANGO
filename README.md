@@ -54,6 +54,7 @@ FLOW_SECRET_KEY = config('FLOW_SECRET_KEY')
 
 ### Llamando a un servicio
 
+```bash
 import requests
 import hashlib
 import hmac
@@ -123,4 +124,4 @@ def payment_confirmation(request):
             return render(request, 'confirmacion.html', {'status': data})
         else:
             return render(request, 'error.html', {'error': response.text})
-
+```
